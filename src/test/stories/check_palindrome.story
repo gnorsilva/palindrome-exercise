@@ -5,17 +5,19 @@ Then application should display <isPalindrome>
 Examples:
 | string                        | isPalindrome |
 | a                             |        false |  
-| pop                           |         true |  
+| aa                            |        false |
+| pop                           |         true |
 | goncalo                       |        false |  
 | Malayalam                     |         true |  
 | Amma                          |         true |  
 | Madam                         |         true |  
-| Dammit I'm mad                |         true |  
 | Sator Arepo Tenet Opera Rotas |         true |
-| 11/11/11                      |         true |
+| Ten animals I slam in a net   |         true |
+| Dammit_I'm_mad                |         true |
+| 121                           |         true |
+| 112211                        |         true |
 | 11/22/11                      |         true |
 | 1/10/11                       |         true |
 | Sandro                        |        false |
 | not a palindrome              |        false |
 | 1/23/41                       |        false |
-| 112211                        |         true |
