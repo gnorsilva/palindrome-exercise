@@ -33,5 +33,4 @@ public class CheckPalindromeSteps {
 		verify(printer).println(isPalindrome);
 	}
 
-
 }

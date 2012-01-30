@@ -10,7 +10,6 @@ public class PalindromeApplication {
 
 	public void isPalindrome(String string) {
 		// TODO Auto-generated method stub
-		
 	}
 
 }
