@@ -4,12 +4,18 @@ import java.io.PrintWriter;
 
 public class PalindromeApplication {
 
-	public PalindromeApplication(PrintWriter printer) {
-		// TODO Auto-generated constructor stub
-	}
+    private Printer printer;
+    private PalindromeDetector detector;
 
-	public void isPalindrome(String string) {
-		// TODO Auto-generated method stub
-	}
+    public PalindromeApplication(Printer printer, PalindromeDetector detector) {
+        this.printer = printer;
+        this.detector = detector;
+    }
+
+    public void isPalindrome(String string) {
+        boolean result = detector.isPalindrome(string);
+        String message = String.valueOf(result);
+        printer.print(message);
+    }
 
 }

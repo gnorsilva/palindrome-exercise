@@ -1,5 +1,5 @@
 package com.gnorsilva.palindrome;
 
-interface PalindromeDetector {
+public interface PalindromeDetector {
     boolean isPalindrome(String palindromeCandidate);
 }

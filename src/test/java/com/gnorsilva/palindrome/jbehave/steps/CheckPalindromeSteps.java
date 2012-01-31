@@ -1,26 +1,22 @@
 package com.gnorsilva.palindrome.jbehave.steps;
 
-import com.gnorsilva.palindrome.PalindromeApplication;
+import com.gnorsilva.palindrome.*;
 import org.jbehave.core.annotations.*;
-
-import java.io.PrintWriter;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class CheckPalindromeSteps {
 
-	private PrintWriter printer;
-	private PalindromeApplication app;
+	private Printer printer;
+    private PalindromeDetector detector;
+    private PalindromeApplication app;
 
-	@BeforeStory
-	public void beforeStoryDo() {
-		printer = mock(PrintWriter.class);
-	}
-	
 	@Given("we run the palindrome application")
 	public void givenWeRunThePalindromeApplication() {
-		app = new PalindromeApplication(printer);
+        printer = mock(Printer.class);
+        detector = new PalindromeService();
+		app = new PalindromeApplication(printer, detector);
 	}
 
 	@When("we ask if a <string> is a palindrome")
@@ -29,8 +25,8 @@ public class CheckPalindromeSteps {
 	}
 
 	@Then("application should display <isPalindrome>")
-	public void thenTheApplicationShouldDisplay(@Named("isPalindrome") Boolean isPalindrome){
-		verify(printer).println(isPalindrome);
+	public void thenTheApplicationShouldDisplay(@Named("isPalindrome") String isPalindrome){
+		verify(printer).print(isPalindrome);
 	}
 
 }
