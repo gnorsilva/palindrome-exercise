@@ -1,12 +1,11 @@
 package com.gnorsilva.palindrome;
 
+import static org.junit.Assert.assertThat;
+
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.junit.Test;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 
 public class PalindromeServiceShould {
 
