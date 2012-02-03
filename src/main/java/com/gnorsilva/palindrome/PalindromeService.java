@@ -1,10 +1,9 @@
 package com.gnorsilva.palindrome;
 
-public class PalindromeService implements PalindromeDetector {
+public class PalindromeService {
 
     private static final int MINIMUM_PALINDROME_LENGTH = 3;
 
-    @Override
     public boolean isPalindrome(String string) {
         if (string.length() < MINIMUM_PALINDROME_LENGTH) {
             return false;
