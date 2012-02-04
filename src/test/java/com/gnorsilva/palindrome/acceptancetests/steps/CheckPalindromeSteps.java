@@ -1,4 +1,4 @@
-package com.gnorsilva.palindrome.jbehave.steps;
+package com.gnorsilva.palindrome.acceptancetests.steps;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
