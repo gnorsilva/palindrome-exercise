@@ -1,21 +1,22 @@
 package com.gnorsilva.palindrome;
 
-import java.io.PrintWriter;
 
 public class PalindromeApplication {
 
-    private Printer printer;
-    private PalindromeDetector detector;
+	private ApplicationView applicationView;
+	private PalindromeService palindromeService;
+	public static final String WELCOME_MESSAGE = "Welcome to Palindrome Application";
+	
+	public PalindromeApplication(ApplicationView applicationView,
+			PalindromeService palindromeService) {
+		this.applicationView = applicationView;
+		this.palindromeService = palindromeService;
+	}
 
-    public PalindromeApplication(Printer printer, PalindromeDetector detector) {
-        this.printer = printer;
-        this.detector = detector;
-    }
-
-    public void isPalindrome(String string) {
-        boolean result = detector.isPalindrome(string);
-        String message = String.valueOf(result);
-        printer.print(message);
-    }
+	public void start() {
+		String userInput = applicationView.askUserForText();
+		boolean isPalindrome = palindromeService.isPalindrome(userInput);
+		applicationView.informResultIs(isPalindrome);
+	}
 
 }
