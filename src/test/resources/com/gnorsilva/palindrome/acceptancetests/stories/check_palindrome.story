@@ -1,6 +1,6 @@
-Given we run the palindrome application
-When we ask if a <string> is a palindrome
-Then application should display <isPalindrome>
+Given we type a <string>
+When we ask Palindromaton to verify it
+Then we should be notified if it <isPalindrome>
 
 Examples:
 | string                        | isPalindrome |

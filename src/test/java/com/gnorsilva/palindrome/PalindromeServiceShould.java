@@ -1,16 +1,15 @@
 package com.gnorsilva.palindrome;
 
+import static org.junit.Assert.assertThat;
+
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
 public class PalindromeServiceShould {
 
-    private final PalindromeDetector palindromeDetector = new PalindromeService();
+    private final PalindromeService palindromeDetector = new PalindromeService();
 
     @Test
     public void not_confirm_a_single_letter_as_a_palindrome() {
