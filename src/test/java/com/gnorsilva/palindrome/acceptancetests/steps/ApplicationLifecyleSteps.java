@@ -9,14 +9,14 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
-import com.gnorsilva.palindrome.ApplicationView;
+import com.gnorsilva.palindrome.PalindromeView;
 import com.gnorsilva.palindrome.PalindromeApplication;
 import com.gnorsilva.palindrome.PalindromeService;
 
 public class ApplicationLifecyleSteps {
 
 	private static final String NOT_A_PALINDROME = "NOT_A_PALINDROME";
-	private ApplicationView applicationView = mock(ApplicationView.class);
+	private PalindromeView applicationView = mock(PalindromeView.class);
 	private PalindromeService palindromeService = mock(PalindromeService.class);
 	private PalindromeApplication app;
 	

@@ -1,16 +1,50 @@
 package com.gnorsilva.palindrome;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class PalindromeServiceShould {
 
-    private final PalindromeService palindromeDetector = new PalindromeService();
-
+	private PalindromeService palindromeService;
+    @Mock private PersistenceService persistenceService;
+    
+    @Before
+    public void initialise() {
+    	when(persistenceService.isKnownPalindrome(anyString())).thenReturn(false);
+    	palindromeService = new PalindromeService(persistenceService);
+    }
+    
+    @Test public void
+    check_if_text_is_a_known_palindrome() {
+    	boolean result = palindromeService.isPalindrome("Not a palindrome");
+    	
+    	verify(persistenceService).isKnownPalindrome("Not a palindrome");
+    	
+    	assertThat(result, is(false));
+    }
+    
+    @Test public void
+    return_true_if_text_is_a_known_palindrome() {
+    	when(persistenceService.isKnownPalindrome("KNOWN_PALINDROME")).thenReturn(true);
+    	
+    	boolean result = palindromeService.isPalindrome("KNOWN_PALINDROME");
+    	
+    	assertThat(result, is(true));
+    }
+    
     @Test
     public void not_confirm_a_single_letter_as_a_palindrome() {
         assertThat("x", isNotAPalindrome());
@@ -78,7 +112,7 @@ public class PalindromeServiceShould {
     private class IsAPalindrome extends BaseMatcher<String> {
         @Override
         public boolean matches(Object o) {
-            return palindromeDetector.isPalindrome(o.toString());
+            return palindromeService.isPalindrome(o.toString());
         }
 
         @Override
@@ -94,7 +128,7 @@ public class PalindromeServiceShould {
     private class IsNotAPalindrome extends BaseMatcher<String> {
         @Override
         public boolean matches(Object o) {
-            return !palindromeDetector.isPalindrome(o.toString());
+            return !palindromeService.isPalindrome(o.toString());
         }
 
         @Override

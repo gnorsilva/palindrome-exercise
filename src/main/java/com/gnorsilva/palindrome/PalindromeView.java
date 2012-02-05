@@ -1,6 +1,6 @@
 package com.gnorsilva.palindrome;
 
-public class ApplicationView {
+public class PalindromeView {
 
 	public static final String TYPE_ANY_TEXT = "Type any text: ";
 	public static final String NOT_A_PALINDROME_MSG = "Text is not a palindrome";
@@ -8,7 +8,7 @@ public class ApplicationView {
 	
 	private PalindromatonConsole console;	
 	
-	public ApplicationView(PalindromatonConsole palindromatonConsole) {
+	public PalindromeView(PalindromatonConsole palindromatonConsole) {
 		this.console = palindromatonConsole;
 	}
 

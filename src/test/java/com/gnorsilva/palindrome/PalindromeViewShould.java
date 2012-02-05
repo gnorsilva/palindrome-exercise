@@ -1,8 +1,8 @@
 package com.gnorsilva.palindrome;
 
-import static com.gnorsilva.palindrome.ApplicationView.IS_A_PALINDROME_MSG;
-import static com.gnorsilva.palindrome.ApplicationView.NOT_A_PALINDROME_MSG;
-import static com.gnorsilva.palindrome.ApplicationView.TYPE_ANY_TEXT;
+import static com.gnorsilva.palindrome.PalindromeView.IS_A_PALINDROME_MSG;
+import static com.gnorsilva.palindrome.PalindromeView.NOT_A_PALINDROME_MSG;
+import static com.gnorsilva.palindrome.PalindromeView.TYPE_ANY_TEXT;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
@@ -18,11 +18,11 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class PalindromeViewShould {
 
 	@Mock PalindromatonConsole palindromatonConsole;
-	private ApplicationView view;
+	private PalindromeView view;
 	
 	@Before 
 	public void initialise() {
-		view = new ApplicationView(palindromatonConsole);
+		view = new PalindromeView(palindromatonConsole);
 	}
 	
 	@Test public void
