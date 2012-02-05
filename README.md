@@ -8,5 +8,6 @@ The JBehave stories are here:
 https://github.com/sandromancuso/palindrome-exercise/tree/master/src/test/resources/com/gnorsilva/palindrome/acceptancetests/stories
 
 To run all the tests you can:
+
 * Command line: mvn test
 * Eclipse: Right click on the project and select Run As >> JUnit Test
