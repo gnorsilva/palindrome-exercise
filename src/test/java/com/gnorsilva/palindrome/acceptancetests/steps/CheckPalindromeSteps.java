@@ -10,6 +10,7 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
 import com.gnorsilva.palindrome.PalindromeService;
+import com.gnorsilva.palindrome.PersistenceService;
 
 public class CheckPalindromeSteps {
 
@@ -19,7 +20,7 @@ public class CheckPalindromeSteps {
 
 	@BeforeStory
 	public void beforeStoryDo() {
-		this.palindromeService = new PalindromeService();
+		this.palindromeService = new PalindromeService(new PersistenceService());
 	}
 	
 	@Given("we type a <string>")

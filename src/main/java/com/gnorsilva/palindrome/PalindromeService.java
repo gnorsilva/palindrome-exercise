@@ -3,10 +3,19 @@ package com.gnorsilva.palindrome;
 public class PalindromeService {
 
     private static final int MINIMUM_PALINDROME_LENGTH = 3;
+	private PersistenceService persistenceService;
 
-    public boolean isPalindrome(String string) {
-    	return (string.length() >= MINIMUM_PALINDROME_LENGTH)
-    				? checkForPalindrome(string)
+    public PalindromeService(PersistenceService persistenceService) {
+    	this.persistenceService = persistenceService;
+	}
+
+	public boolean isPalindrome(String text) {
+		if (persistenceService.isKnownPalindrome(text)) {
+			return true;
+		}
+		
+    	return (text.length() >= MINIMUM_PALINDROME_LENGTH)
+    				? checkForPalindrome(text)
     				: false;
     }
 

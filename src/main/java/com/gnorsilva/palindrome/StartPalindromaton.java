@@ -6,10 +6,11 @@ public class StartPalindromaton {
 		PalindromatonConsole console = new PalindromatonConsole();
 		PalindromeView view = new PalindromeView(console);
 		
-		PalindromeService service = new PalindromeService();
+		PersistenceService persistenceService = new PersistenceService();
+		persistenceService.setKnownPalindromes("Madam", "Malayalam");
+		PalindromeService service = new PalindromeService(persistenceService);
 		
-		PalindromeApplication app = new PalindromeApplication(view, service);
-		
+		PalindromeApplication app = new PalindromeApplication(view, service);		
 		app.start();
 	}
 
