@@ -1,10 +1,10 @@
 package com.gnorsilva.palindrome;
 
-public class StartPalindromatron {
+public class StartPalindromaton {
 	
 	public static void main(String[] args) {
 		PalindromatonConsole console = new PalindromatonConsole();
-		ApplicationView view = new ApplicationView(console);
+		PalindromeView view = new PalindromeView(console);
 		
 		PalindromeService service = new PalindromeService();
 		

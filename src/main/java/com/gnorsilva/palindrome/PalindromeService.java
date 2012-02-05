@@ -5,11 +5,9 @@ public class PalindromeService {
     private static final int MINIMUM_PALINDROME_LENGTH = 3;
 
     public boolean isPalindrome(String string) {
-        if (string.length() < MINIMUM_PALINDROME_LENGTH) {
-            return false;
-        } else {
-            return checkForPalindrome(string);
-        }
+    	return (string.length() >= MINIMUM_PALINDROME_LENGTH)
+    				? checkForPalindrome(string)
+    				: false;
     }
 
     private boolean checkForPalindrome(String string) {
